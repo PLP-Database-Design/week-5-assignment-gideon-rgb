@@ -1,13 +1,14 @@
 // import package
-require('dotenv').config();
+const dotenv = require('dotenv')
 const mysql = require('mysql2');
 const express = require('express')
 // const db = require('hospital_db.sql')
+require('dotenv').config();
 const app = express()
 
 
 
-// create the connection
+// create the connection object
 const connection = mysql.createConnection({
   host: process.env.DB_HOST,
   user: process.env.DB_USERNAME,
@@ -15,7 +16,7 @@ const connection = mysql.createConnection({
   database: process.env.DB_NAME
 });
 
-//conect to the db
+//test the conect to the db
 // Connect to the database
 connection.connect((err) => {
 if (err) {
